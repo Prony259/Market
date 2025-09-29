@@ -1,9 +1,6 @@
 # Market
 사용해보고 싶던 기술들을 적용한 중고거래 사이트 토이 프로젝트입니다
 
-# Market
-사용해보고 싶던 기술들을 적용한 중고거래 사이트 토이 프로젝트입니다
-
 # 필요 기능
 
 ## 회원가입 / 로그인 (일단 oauth로 해놓고, 나중에 JWT)
@@ -15,7 +12,7 @@ Spring Security, JWT, JPA
 
 ## 권한 관리 (일반 사용자 / 관리자)
 Spring Security Role로 사용자, 관리자 나눌 예정 (ROLE_USER, ROLE_ADMIN)
-관리자는 모든 글 수정, 삭제, 전체 공지 제공 기능이 추가 됨.
+관리자는 모든 글 수정, 삭제, 전체 공지 제공, 사용자 목록 조회, 신고 관리, 상품 차단/삭제 등등의 기능이 추가 됨.
 
 ## 상품 등록 / 수정 / 삭제
 MultipartFile
@@ -55,7 +52,7 @@ Spring Security Role로 사용자, 관리자 나눌 예정 (ROLE_USER, ROLE_ADMI
 MultipartFile
 
 ## 상품 목록 / 상세 조회
-페이징 처리할때 리스트 형식으로 구현..?
+페이징 처리할때 무한 스크롤 형식으로 구현..?
 
 ## 찜하기 기능 (좋아요)
 
@@ -73,23 +70,10 @@ Kafka (알림 이벤트 생성), Redis Pub/Sub, WebSocket (또는 FCM)
 ## 키워드 알람받기
 스프링 이벤트
 
-관리자 기능
-
-사용자 목록 조회, 신고 관리, 상품 차단/삭제
-
-Spring Security (ROLE_ADMIN 보호된 API)
-
-AOP 적용
-
-공통 로깅, 요청 시간 측정, 예외 공통 처리
-
-Spring AOP, @Aspect, MDC (로그 추적)
-
-에러 핸들링 / 공통 응답 포맷
-
+## 로그 추적과 에러 핸들링
+Spring AOP, MDC
 @ControllerAdvice, ResponseEntity, Custom Error DTO
 
-API 문서화
 
 Springdoc OpenAPI (Swagger 자동 문서화)
 
@@ -99,18 +83,8 @@ Springdoc OpenAPI (Swagger 자동 문서화)
 
 통합 테스트 (MockMvc, Embedded Kafka, Testcontainers)
 
-DB 설계 / 연동
-
-PostgreSQL, JPA, ERD 기반 설계
-
 이벤트 기반 비동기 처리
 
 Kafka (채팅, 알림, 신고 처리 비동기 처리)
 
-조회 최적화 및 캐싱
-
-Redis, Spring Cache
-
-로컬 개발환경 구성
-
-Docker, Docker Compose (PostgreSQL, Redis, Kafka 포함)
+조회 최적화 및 캐싱 등 개선할꺼 계속 생각
